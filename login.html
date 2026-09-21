@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Wine Cellar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-wine-glass"></i>
+                Luxury Wine Cellar
+            </div>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#wines">Wines</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Experience Premium Wines</h1>
+            <p>Discover the finest collection of red, white and sparkling wines.</p>
+            <a href="#register" class="btn">Join Our Wine Club</a>
+        </div>
+    </section>
+
+    <!-- Wines Section -->
+    <section id="wines" class="wines">
+        <h2>Featured Wines</h2>
+
+        <div class="wine-container">
+
+            <div class="wine-card">
+                <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500" alt="">
+                <h3>Cabernet Sauvignon</h3>
+                <p>Rich, bold and elegant red wine.</p>
+            </div>
+
+            <div class="wine-card">
+                <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=500" alt="">
+                <h3>Chardonnay</h3>
+                <p>Fresh and fruity white wine.</p>
+            </div>
+
+            <div class="wine-card">
+                <img src="https://images.unsplash.com/photo-1566754436893-9824c85f9a84?w=500" alt="">
+                <h3>Champagne</h3>
+                <p>Luxury sparkling wine for celebrations.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+
+        <p>
+            Luxury Wine Cellar offers world-class wines sourced
+            from the finest vineyards across the globe. Our mission
+            is to bring unforgettable wine experiences to enthusiasts
+            and collectors.
+        </p>
+    </section>
+
+    <!-- Registration -->
+    <section id="register" class="register">
+        <h2>Register For Wine Club</h2>
+
+        <form id="registrationForm">
+
+            <input type="text" id="fullname"
+            placeholder="Full Name" required>
+
+            <input type="email" id="email"
+            placeholder="Email Address" required>
+
+            <input type="password" id="password"
+            placeholder="Password" required>
+
+            <input type="tel" id="phone"
+            placeholder="Phone Number" required>
+
+            <button type="submit">Register</button>
+
+        </form>
+
+        <p id="message"></p>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+
+        <h2>Contact Us</h2>
+
+        <div class="contact-info">
+            <p><i class="fas fa-phone"></i> +237 67674562</p>
+            <p><i class="fas fa-envelope"></i> info@luxurywine.com</p>
+            <p><i class="fas fa-location-dot"></i> Yaounde, Cameroon</p>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Luxury Wine Cellar. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Create Account</h2>
+
+<form id="registerForm">
+
+<input
+type="text"
+id="fullname"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+id="email"
+placeholder="Email"
+required>
+
+<input
+type="password"
+id="password"
+placeholder="Password"
+required>
+
+<button
+type="submit"
+class="btn">
+Register
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<script src="js/auth.js"></script>
+
+</body>
+</html>
+
+
+"http://localhost:5000/api/auth";
+
+const registerForm =
+document.getElementById(
+"registerForm"
+);
+
+if(registerForm){
+
+registerForm.addEventListener(
+"submit",
+async(e)=>{
+
+e.preventDefault();
+
+const data = {
+
+fullname:
+document.getElementById(
+"fullname"
+).value,
+
+email:
+document.getElementById(
+"email"
+).value,
+
+password:
+document.getElementById(
+"password"
+).value
+
+};
+
+const res =
+await fetch(
+`${API}/register`,
+{
+method:"POST",
+
+headers:{
+"Content-Type":
+"application/json"
+},
+
+body:
+JSON.stringify(data)
+}
+);
+
+alert(
+"Registration Successful"
+);
+
+});
+}
+
+const loginForm =
+document.getElementById(
+"loginForm"
+);
+
+if(loginForm){
+
+loginForm.addEventListener(
+"submit",
+async(e)=>{
+
+e.preventDefault();
+
+const res =
+await fetch(
+`${API}/login`,
+{
+method:"POST",
+
+headers:{
+"Content-Type":
+"application/json"
+},
+
+body:JSON.stringify({
+
+email:
+document.getElementById(
+"email"
+).value,
+
+password:
+document.getElementById(
+"password"
+).value
+
+})
+}
+);
+
+const data =
+await res.json();
+
+localStorage.setItem(
+"token",
+data.token
+);
+
+window.location=
+"dashboard.html";
+
+});
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wine Store</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Wine Collection</h1>
+
+<div
+id="wineContainer"
+class="grid">
+</div>
+
+</div>
+
+<script src="js/wines.js"></script>
+
+</body>
+</html>
+    
