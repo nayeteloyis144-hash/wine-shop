@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Wine Cellar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-wine-glass"></i>
+                Luxury Wine Cellar
+            </div>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#wines">Wines</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Experience Premium Wines</h1>
+            <p>Discover the finest collection of red, white and sparkling wines.</p>
+            <a href="#registeration.html" class="btn">Join Our Wine Club</a>
+        </div>
+    </section>
+
+    <!-- Wines Section -->
+    <section id="wines" class="wines">
+        <h2>Featured Wines</h2>
+
+        <div class="wine-container">
+
+            <div class="wine-card">
+                <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500" alt="">
+                <h3>Cabernet Sauvignon</h3>
+                <p>Rich, bold and elegant red wine.</p>
+            </div>
+
+            <div class="wine-card">
+                <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=500" alt="">
+                <h3>Chardonnay</h3>
+                <p>Fresh and fruity white wine.</p>
+            </div>
+
+            <div class="wine-card">
+                <img src="https://images.unsplash.com/photo-1566754436893-9824c85f9a84?w=500" alt="">
+                <h3>Champagne</h3>
+                <p>Luxury sparkling wine for celebrations.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+
+        <p>
+            Luxury Wine Cellar offers world-class wines sourced
+            from the finest vineyards across the globe. Our mission
+            is to bring unforgettable wine experiences to enthusiasts
+            and collectors.
+        </p>
+    </section>
+
+    <!-- Registration -->
+    <section id="register" class="register">
+        <h2>Register For Wine Club</h2>
+
+        <form id="registrationForm">
+
+            <input type="text" id="fullname"
+            placeholder="Full Name" required>
+
+            <input type="email" id="email"
+            placeholder="Email Address" required>
+
+            <input type="password" id="password"
+            placeholder="Password" required>
+
+            <input type="tel" id="phone"
+            placeholder="Phone Number" required>
+
+            <button type="submit">Register</button>
+
+        </form>
+
+        <p id="message"></p>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+
+        <h2>Contact Us</h2>
+
+        <div class="contact-info">
+            <p><i class="fas fa-phone"></i> +237 67674562</p>
+            <p><i class="fas fa-envelope"></i> info@luxurywine.com</p>
+            <p><i class="fas fa-location-dot"></i> Yaounde, Cameroon</p>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Luxury Wine Cellar. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wine Store Login</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(
+135deg,
+#4b001d,
+#8b0038
+);
+}
+
+.login-container{
+width:400px;
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.logo{
+text-align:center;
+font-size:50px;
+margin-bottom:10px;
+}
+
+h2{
+text-align:center;
+color:#4b001d;
+margin-bottom:25px;
+}
+
+.input-group{
+margin-bottom:15px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:5px;
+font-weight:bold;
+color:#333;
+}
+
+.input-group input{
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+.input-group input:focus{
+outline:none;
+border-color:#8b0038;
+}
+
+.btn{
+width:100%;
+padding:14px;
+background:#8b0038;
+border:none;
+color:white;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+background:#4b001d;
+}
+
+.links{
+margin-top:15px;
+text-align:center;
+}
+
+.links a{
+text-decoration:none;
+color:#8b0038;
+font-weight:bold;
+}
+
+.message{
+text-align:center;
+margin-top:15px;
+font-weight:bold;
+}
+
+</style>
+</head>
+<body>
+
+<div class="login-container">
+
+<div class="logo">🍷</div>
+
+<h2>Wine Store Login</h2>
+
+<form id="loginForm">
+
+<div class="input-group">
+<label>Email Address</label>
+<input type="email" id="email" required>
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input type="password" id="password" required>
+</div>
+
+<button type="submit" class="btn">
+Login
+</button>
+
+</form>
+
+<div class="links">
+<p>
+Don't have an account?
+<a href="register.html">Register</a>
+</p>
+</div>
+
+<p id="message" class="message"></p>
+
+</div>
+
+<script>
+
+document.getElementById("loginForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const email =
+document.getElementById("email").value;
+
+const password =
+document.getElementById("password").value;
+
+if(email === "admin@wine.com" &&
+password === "admin123"){
+
+document.getElementById("message")
+.innerHTML =
+"✅ Login Successful";
+
+setTimeout(() => {
+window.location.href =
+"dashboard.html";
+}, 1000);
+
+}else{
+
+document.getElementById("message")
+.innerHTML =
+"❌ Invalid Email or Password";
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
